@@ -1,0 +1,29 @@
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+#front {
+  display: inline-block;
+}
+
+#back {
+  display: none;
+}
+
+button {
+  position: absolute;
+}
+
+#next {
+  right: 5px;
+}
+
+#prev {
+  left: 5px;
+}
