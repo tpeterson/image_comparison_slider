@@ -11,28 +11,34 @@ var leftClick = function() {
 // Swaps between displaying front and back photo by toggling front photo
 // Else is default, while if is what happens after imageClick() activated once
 var imageClick = function() {
-  if (document.getElementById("front").style.right=="-100%") {
-    document.getElementById("front").style.right="0%";
+  if (document.getElementById("front").style.width=="25%") {
+    document.getElementById("front").style.width="100%";
   }
   else {
-    document.getElementById("front").style.right="-100%"
+    document.getElementById("front").style.width="25%";
   }
 
-  //frontPosition = document.getElementById("front").offsetWidth;
-  //console.log(frontPosition);
+  frontPosition = document.getElementById("front").offsetLeft;
+  backPosition = document.getElementById("back").offsetLeft;
+  console.log("And now...");
+  console.log("Front: " + frontPosition);
+  console.log("Back: " + backPosition);
 }
+
 
 // Log position of container and images
 window.onload = function() {
   //width between left edge of screen and left edge of image position
   frontPosition = document.getElementById("front").offsetLeft;
-  //backPosition = document.getElementById("back").offsetLeft;
+  backPosition = document.getElementById("back").offsetLeft;
   //width of container
-  boxPosition = document.getElementById("container").offsetWidth;
+  containerPosition = document.getElementById("container").offsetWidth;
 
-  console.log(frontPosition);
-  //console.log(backPosition);
-  console.log(boxPosition);
+  console.log("On load...");
+  console.log("Container: " + containerPosition);
+  console.log("Front: " + frontPosition);
+  console.log("Back: " + backPosition);
+}
 
 
 /* SANDBOX FOR GETTING POSITION OF SLIDER
