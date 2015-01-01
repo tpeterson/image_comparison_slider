@@ -5,19 +5,22 @@
   position: relative;
 }
 
-/*#container img {
-width: 100%;
-height: 200px;
-}*/
+#slider {
+  display: inline-block;
+  position: absolute;
+  left: 360px;
+  top: 40%;
+  opacity: 1;
+}
 
 #front {
   display: inline-block;
-  position: relative; /*important*/
-  width: 100%;
+  /*important*/
+  width: 400px;
 }
 
 #animal {
-  position: relative;
+
   display: inline-block;
   height: 200px;
 }
@@ -31,16 +34,4 @@ height: 200px;
 #people {
   display: inline-block;
   position: absolute; /*important*/
-}
-
-button {
-  position: absolute;
-}
-
-#next {
-  right: 5px;
-}
-
-#prev {
-  left: 5px;
 }
