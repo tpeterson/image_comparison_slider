@@ -17,6 +17,7 @@ function mouseDown(e){
 // Function to drag slider
 function dragItem(e){
   var div = document.getElementById('slider');
+  var containerPosition = document.getElementById("container").offsetLeft;
   var mouseleft = e.clientX - containerPosition - 20;
   div.style.left = mouseleft + 'px';
   var sliderLeft = div.style.left;
@@ -38,9 +39,10 @@ function slideImage(sliderLeft) {
     document.getElementById("front").style.width = where + "px";
   }
 
-  frontPosition = document.getElementById("front").offsetWidth;
-  backPosition = document.getElementById("back").offsetLeft;
-  sliderPosition = document.getElementById("slider").offsetLeft;
+  var frontPosition = document.getElementById("front").offsetWidth;
+  var backPosition = document.getElementById("back").offsetLeft;
+  var sliderPosition = document.getElementById("slider").offsetLeft;
+  var containerPosition = document.getElementById("container").offsetLeft;
   console.log("And now...");
   console.log("Front: " + frontPosition);
   console.log("Back: " + backPosition);
@@ -51,11 +53,11 @@ function slideImage(sliderLeft) {
 // Log position of container and images
 window.onload = function() {
   //width between left edge of screen and left edge of image position
-  frontPosition = document.getElementById("front").offsetLeft;
-  backPosition = document.getElementById("back").offsetLeft;
+  var frontPosition = document.getElementById("front").offsetLeft;
+  var backPosition = document.getElementById("back").offsetLeft;
   //width of container
-  containerPosition = document.getElementById("container").offsetLeft;
-  sliderPosition = document.getElementById("slider").offsetLeft;
+  var containerPosition = document.getElementById("container").offsetLeft;
+  var sliderPosition = document.getElementById("slider").offsetLeft;
 
   console.log("On load...");
   console.log("Container: " + containerPosition);
