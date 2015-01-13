@@ -6,11 +6,15 @@
 }
 
 #slider {
+  height: 40px;
+  width: 40px;
   display: inline-block;
   position: absolute;
-  left: 360px;
+  left: 180px;
   top: 40%;
   opacity: 1;
+  cursor: move;
+  overflow: visible;
 }
 
 #front {
