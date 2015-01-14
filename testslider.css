@@ -13,8 +13,20 @@
   left: 180px;
   top: 40%;
   opacity: 1;
+}
+
+svg {
+  fill: white;
+  stroke: red;
+}
+
+svg:hover {
   cursor: move;
-  overflow: visible;
+}
+
+svg:active {
+  fill: red;
+  stroke: white;
 }
 
 #front {
