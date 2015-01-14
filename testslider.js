@@ -22,11 +22,11 @@ function dragItem(e){
   // TEST FOR BOUNDARIES ON SLIDER
   var containerWidth = document.getElementById("container").offsetWidth;
   var sliderWidth = document.getElementById("slider").offsetWidth;
-  minLeft = e.clientX - containerPosition + 10;
+  minLeft = e.clientX - containerPosition - 400; // previously '+ 10' not '- 400'
   maxLeft = containerPosition + containerWidth;
 
-  var mouseleft = e.clientX - containerPosition - 20;
-  div.style.left = mouseleft + 20 + 'px';
+  var mouseleft = e.clientX - containerPosition; // previously '- 20'
+  div.style.left = mouseleft - 20 + 'px'; // previously '+ 20'
   var sliderLeft = div.style.left;
 
   slideImage(mouseleft);
@@ -40,7 +40,7 @@ function dragItem(e){
 
 // Function to slide back image in sync with slider button's location
 function slideImage(sliderLeft) {
-  var where = sliderLeft + 40;
+  var where = sliderLeft; // previously '+ 40'
 
   // TEST FOR BOUNDARIES ON SLIDER
   if(where < minLeft ) {
