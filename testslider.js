@@ -22,11 +22,11 @@ function dragItem(e){
   // TEST FOR BOUNDARIES ON SLIDER
   var containerWidth = document.getElementById("container").offsetWidth;
   var sliderWidth = document.getElementById("slider").offsetWidth;
-  minLeft = e.clientX - containerPosition - 400; // previously '+ 10' not '- 400'
-  maxLeft = containerPosition + containerWidth;
+  minLeft = 0; //
+  maxLeft = containerWidth;
 
-  var mouseleft = e.clientX - containerPosition; // previously '- 20'
-  div.style.left = mouseleft - 20 + 'px'; // previously '+ 20'
+  var mouseleft = e.clientX - containerPosition; 
+  div.style.left = mouseleft - 20 + 'px';
   var sliderLeft = div.style.left;
 
   slideImage(mouseleft);
@@ -40,13 +40,18 @@ function dragItem(e){
 
 // Function to slide back image in sync with slider button's location
 function slideImage(sliderLeft) {
+  var containerPosition = document.getElementById("container").offsetLeft;
+  var containerWidth = document.getElementById("container").offsetWidth;
+
   var where = sliderLeft; // previously '+ 40'
 
   // TEST FOR BOUNDARIES ON SLIDER
-  if(where < minLeft ) {
-    where = minLeft;
-  } else if ( where > maxLeft) {
-    where = maxLeft;
+  if(where < minLeft) { // plus or minus to change where back photo/slider stops
+    where = containerPosition; // must be same as if argument
+    mouseUp();
+  } else if ( where > maxLeft) { // plus or minus to change where back photo/slider stops
+    where = containerPosition + containerWidth; // must be same as else if argument
+    mouseUp();
   }
   else {
     document.getElementById("front").style.width = where + "px";
