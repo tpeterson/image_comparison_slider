@@ -25,8 +25,8 @@ function dragItem(e){
   minLeft = 0; //
   maxLeft = containerWidth;
 
-  var mouseleft = e.clientX - containerPosition; 
-  div.style.left = mouseleft - 20 + 'px';
+  var mouseleft = e.clientX - containerPosition;
+  div.style.left = mouseleft - 15 + 'px';
   var sliderLeft = div.style.left;
 
   slideImage(mouseleft);

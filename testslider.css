@@ -6,27 +6,42 @@
 }
 
 #slider {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   display: inline-block;
   position: absolute;
-  left: 180px;
-  top: 40%;
+  left: 185px; /*width of container divided in half then minus half width of circle*/
+  top: 85px; /*height of container divided in half then minus half height of circle*/
   opacity: 1;
+  overflow: hidden;
 }
 
-svg {
+#arrows {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 30%;
   fill: white;
-  stroke: red;
 }
 
-svg:hover {
+#circle {
+  fill: white;
+  stroke: black;
+  position: absolute;
+  display: inline-block;
+}
+
+#circle:hover {
   cursor: move;
 }
 
-svg:active {
+#slider:hover #arrows {
   fill: red;
-  stroke: white;
+  cursor: move;
+}
+
+#slider:active #circle {
+  stroke: red;
 }
 
 #front {
