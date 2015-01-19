@@ -1,8 +1,50 @@
 #container {
-  max-width: 400px;
-  margin: 0 auto;
-  overflow: hidden;
   position: relative;
+  max-width: 400px;
+  margin: 0em auto;
+  height: 200px;
+}
+
+#container img {
+  display: inline-block;
+  height: 100%;
+}
+
+#front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: url(http://placeimg.com/400/200/people) no-repeat left top;
+  background-size: auto 100%;
+}
+
+.inview #front {
+  width: 50%;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  padding: 1em;
+}
+
+.inview .label {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#front .label {
+  right: auto;
+  left: 0;
 }
 
 #slider {
@@ -42,28 +84,6 @@
 
 #slider:active #circle {
   stroke: red;
-}
-
-#front {
-  display: inline-block;
-  /*important*/
-  width: 50%;
-}
-
-#animal {
-  display: inline-block;
-  height: 200px;
-}
-
-#back {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-}
-
-#people {
-  display: inline-block;
-  position: absolute; /*important*/
 }
 
 .noselect {
