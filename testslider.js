@@ -4,18 +4,27 @@ document.addEventListener("readystatechange", function(event) {
 });
 
 // Stop dragging when slider button released
-function mouseUp()
-{
+function mouseUp() {
+  var div = document.getElementById("slider");
+  var leftedge = document.getElementById("front").style.width;
+  var containerWidth = document.getElementById("container").offsetWidth;
+
+  if (leftedge === 0){
+    div.style.left = leftedge + 15 + "px";
+  } else if (leftedge === containerWidth) {
+    div.style.left = containerWidth - 15 + "px";
+  }
+
   window.removeEventListener('mousemove', dragItem, true);
 }
 
 // Call function to drag slider when mouse pressed down over slider button
-function mouseDown(e){
+function mouseDown(e) {
   window.addEventListener('mousemove', dragItem, true);
 }
 
 // Function to drag slider
-function dragItem(e){
+function dragItem(e) {
   var div = document.getElementById('slider');
   var containerPosition = document.getElementById("container").offsetLeft;
 
