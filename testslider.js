@@ -21,13 +21,13 @@ function dragItem(e){
   // TEST FOR BOUNDARIES ON SLIDER
   var containerWidth = document.getElementById("container").offsetWidth;
   var sliderWidth = document.getElementById("slider").offsetWidth;
-  minLeft = 0;
-  maxLeft = containerWidth;
+  var minLeft = 0;
+  var maxLeft = containerWidth;
 
   var mouseleft = e.clientX - containerPosition;
   div.style.left = mouseleft - 15 + "px";
 
-  slideImage(mouseleft);
+  slideImage(mouseleft, minLeft, maxLeft);
 
   /*var sliderLeft = div.style.left;
   console.log("Client X: " + e.clientX + "px");
@@ -41,29 +41,29 @@ function dragItem(e){
 }
 
 // Function to slide back image in sync with slider button's location
-function slideImage(sliderLeft) {
+function slideImage(sliderLeft, minLeft, maxLeft) {
   var containerPosition = document.getElementById("container").offsetLeft;
   var containerWidth = document.getElementById("container").offsetWidth;
 
   var where = sliderLeft;
 
-  // TEST FOR BOUNDARIES ON SLIDER
-  if(where < minLeft) {
-    where = 0;
-
-    var div = document.getElementById("slider");
-    var leftedge = document.getElementById("front").style.width;
-    var containerWidth = document.getElementById("container").offsetWidth;
-    div.style.left = leftedge + 15 + "px";
-
-    mouseUp();
-  } else if ( where > maxLeft) {
-    where = containerWidth;
-
+  if (window.clientX > (containerPosition + containerWidth)) {
     var div = document.getElementById("slider");
     var leftedge = document.getElementById("front").style.width;
     var containerWidth = document.getElementById("container").offsetWidth;
     div.style.left = containerWidth - 15 + "px";
+
+    where = containerWidth;
+
+    mouseUp();
+  }
+  else if (window.clientX < containerPosition) {
+    var div = document.getElementById("slider");
+    var leftedge = document.getElementById("front").style.width;
+    var containerWidth = document.getElementById("container").offsetWidth;
+    div.style.left = -15 + "px";
+
+    where = 0;
 
     mouseUp();
   }
@@ -71,13 +71,37 @@ function slideImage(sliderLeft) {
     document.getElementById("front").style.width = where + "px";
   }
 
-  var frontPosition = document.getElementById("front").offsetWidth;
-  var backPosition = document.getElementById("animal").offsetLeft;
-  var sliderPosition = document.getElementById("slider").offsetLeft;
-  var containerPosition = document.getElementById("container").offsetLeft;
-  /*console.log("And now...");
-  console.log("Front width: " + frontPosition);
-  console.log("Back from left: " + backPosition);
-  console.log("Slider from left: " + sliderPosition);
-  console.log("Container from left: " + containerPosition);*/
+  // TEST FOR BOUNDARIES ON SLIDER
+  /*if(where < minLeft) {
+  var div = document.getElementById("slider");
+  var leftedge = document.getElementById("front").style.width;
+  var containerWidth = document.getElementById("container").offsetWidth;
+  div.style.left = - 15 + "px";
+
+  where = 0;
+
+  mouseUp();
+} else if ( where > maxLeft) {
+var div = document.getElementById("slider");
+var leftedge = document.getElementById("front").style.width;
+var containerWidth = document.getElementById("container").offsetWidth;
+div.style.left = containerWidth - 15 + "px";
+
+where = containerWidth;
+
+mouseUp();
+}*
+else {
+document.getElementById("front").style.width = where + "px";
+}*/
+
+/*var frontPosition = document.getElementById("front").offsetWidth;
+var backPosition = document.getElementById("animal").offsetLeft;
+var sliderPosition = document.getElementById("slider").offsetLeft;
+var containerPosition = document.getElementById("container").offsetLeft;
+console.log("And now...");
+console.log("Front width: " + frontPosition);
+console.log("Back from left: " + backPosition);
+console.log("Slider from left: " + sliderPosition);
+console.log("Container from left: " + containerPosition);*/
 }
