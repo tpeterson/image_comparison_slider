@@ -1,8 +1,9 @@
 #container {
   position: relative;
-  max-width: 400px;
+  max-width: 642px;
   margin: 0em auto;
-  height: 200px;
+  height: 428px;
+  overflow: hidden;
 }
 
 #container img {
@@ -17,20 +18,25 @@
   width: 0;
   height: 100%;
   overflow: hidden;
-  background: url(http://placeimg.com/400/200/people) no-repeat left top;
+  background: no-repeat left top;
   background-size: auto 100%;
+  border-right-style: solid;
+  border-right-width: thin;
+  border-right-color: #3CC2C2;
 }
 
 .inview #front {
-  width: 50%;
+	width: 50%;
 }
 
 .label {
   position: absolute;
   top: 0;
   right: 0;
-  color: #ffffff;
+  color: #C23C3C;
   padding: 1em;
+  font-size: 35px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .inview .label {
@@ -48,50 +54,53 @@
 }
 
 #slider {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  position: absolute;
-  left: 185px; /*width of container divided in half then minus half width of circle*/
-  top: 85px; /*height of container divided in half then minus half height of circle*/
-  opacity: 1;
-  overflow: hidden;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	position: absolute;
+	left: 306px; /*width of container divided in half then minus half width of circle*/
+	top: 199px; /*height of container divided in half then minus half height of circle*/
+	opacity: 1;
+	overflow: hidden;
 }
 
 #arrows {
-  display: inline-block;
-  position: absolute;
-  left: 6px;
-  top: 30%;
-  fill: white;
+	display: inline-block;
+	position: absolute;
+	left: 6px;
+	top: 30%;
+	fill: white;
 }
 
 #circle {
-  fill: white;
-  stroke: black;
-  position: absolute;
-  display: inline-block;
+	fill: #3CC2C2;
+	position: absolute;
+	display: inline-block;
 }
 
 #circle:hover {
-  cursor: move;
+	cursor: move;
 }
 
 #slider:hover #arrows {
-  fill: red;
-  cursor: move;
+	fill: #C23C3C;
+	cursor: move;
 }
 
 #slider:active #circle {
-  stroke: red;
+	fill: #C23C3C;
+}
+
+#slider:active #arrows {
+	fill: white;
 }
 
 .noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
