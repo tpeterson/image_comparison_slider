@@ -1,29 +1,97 @@
-.container {
+#container {
+  position: relative;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0em auto;
+  height: 200px;
 }
 
-.container img {
-  width: 100%;
-  height: auto;
+#container img {
+  display: inline-block;
+  height: 100%;
 }
 
 #front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: url(http://placeimg.com/400/200/people) no-repeat left top;
+  background-size: auto 100%;
+}
+
+.inview #front {
+  width: 50%;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  padding: 1em;
+}
+
+.inview .label {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#front .label {
+  right: auto;
+  left: 0;
+}
+
+#slider {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  position: absolute;
+  left: 185px; /*width of container divided in half then minus half width of circle*/
+  top: 85px; /*height of container divided in half then minus half height of circle*/
+  opacity: 1;
+  overflow: hidden;
+}
+
+#arrows {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 30%;
+  fill: white;
+}
+
+#circle {
+  fill: white;
+  stroke: black;
+  position: absolute;
   display: inline-block;
 }
 
-#back {
-  display: none;
+#circle:hover {
+  cursor: move;
 }
 
-button {
-  position: absolute;
+#slider:hover #arrows {
+  fill: red;
+  cursor: move;
 }
 
-#next {
-  right: 5px;
+#slider:active #circle {
+  stroke: red;
 }
 
-#prev {
-  left: 5px;
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
