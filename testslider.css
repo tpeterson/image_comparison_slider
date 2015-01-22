@@ -34,18 +34,15 @@
   top: 0;
   right: 0;
   color: #C23C3C;
-  padding: 1em;
-  font-size: 35px;
+  font-size: 40px;
+  padding: 15px;
   font-family: 'Source Sans Pro', sans-serif;
+  white-space: nowrap;
 }
 
 .inview .label {
   opacity: 1;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
+
 }
 
 #front .label {
@@ -54,12 +51,12 @@
 }
 
 #slider {
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 	display: inline-block;
 	position: absolute;
-	left: 306px; /*width of container divided in half then minus half width of circle*/
-	top: 199px; /*height of container divided in half then minus half height of circle*/
+	left: 301px; /*width of container divided in half then minus half width of circle*/
+	top: 194px; /*height of container divided in half then minus half height of circle*/
 	opacity: 1;
 	overflow: hidden;
 }
@@ -67,8 +64,8 @@
 #arrows {
 	display: inline-block;
 	position: absolute;
-	left: 6px;
-	top: 30%;
+	left: 11px; /*(width of slider minus width of arrows svg) divided by 2*/
+	top: 13px; /*(height of slider minus height of arrows svg) divided by 2*/
 	fill: white;
 }
 
@@ -93,6 +90,10 @@
 
 #slider:active #arrows {
 	fill: white;
+}
+
+#container:active .label {
+	opacity: 0;
 }
 
 .noselect {
